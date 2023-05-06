@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+    <link rel="stylesheet" href="reg.css">
+    <link rel="javascript" href="exp4.js"> 
+    <title>  
+    Registration Form  
+    </title>  
+    <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["fname"].value;
+          var y = document.forms["myForm"]["lname"].value;
+          var z = document.forms["myForm"]["mname"].value;
+          var a = document.forms["myForm"]["course"].value;
+          var b = document.forms["myForm"]["phone"].value;
+          var c = document.forms["myForm"]["email"].value;
+          var d = document.forms["myForm"]["pass"].value;
+          var e = document.forms["myForm"]["pass2"].value;
+          if (x == "" || x == null || y == "" || y == null || z == "" || z == null) {
+            alert("Name must be filled out");
+            return false;
+          }
+          if (a=="-1") {
+            alert("Course must be select");
+            return false;
+          }
+          if (b== "" || b == null) {
+            alert("enter phone number correctly");
+            return false;
+          }
+          if (c== "" || c == null) {
+            alert("enter email id correctly");
+            return false;
+          }
+          if (d== "" || d == null || e== "" || e == null || e!=d ) {
+            alert("enter password correctly");
+            return false;
+          }
+          return true;
+        }
+        </script>
+    </head>  
+<body class="body1">
+    <div align="center"><h1>Registration Form</h1></div>
+    <div class="container">
+    <form action="sample.php" name="myForm" onsubmit="return validateForm()" method="post">
+    Firstname: <input type="text" name="fname"><br> <br>  
+    <label > Middlename: </label>     
+    <input id="mname" type="text" name="mname"/> <br> <br>  
+    <label > Lastname: </label>         
+    <input id="lname" type="text" name="lname" /> <br> <br>   
+    <label>   
+    Course :  
+    </label>   
+    <select name="course">  
+    <option value="-1" value="Course">Course</option>  
+    <option value="1" value="BE">BE</option>  
+    <option value="2" value="B.Tech">B.Tech</option>  
+    <option value="3" value="MBA">MBA</option>  
+    <option value="4" value="ME">ME</option>  
+    <option value="5" value="M.Tech">M.Tech</option>  
+    </select> 
+    <br>  
+    <br>  
+    <label>   
+    Gender :  
+    </label><br>  
+    <input type="radio" name="sel"/> Male <br>  
+    <input type="radio" name="sel"/> Female <br>  
+    <input type="radio" name="sel"/> Other  
+    <br>  
+    <br>  
+     <label>   
+    Phone :  
+    </label>  
+    <input name="phone" type="text"/> <br> <br>  
+    Address  
+    <br>  
+    <textarea cols="80" rows="5">  
+    </textarea>  
+    <br> <br>  
+    Email:  
+    <input name="email" type="text"/> <br>    
+    <br> <br>  
+    Password:  
+    <input name="pass" type="Password"> <br>   
+    <br> <br>  
+    Re-type password:  
+    <input name="pass2" type="Password"> <br> <br>  
+    <input type="submit" value="Submit" class="registerbtn"/>
+    </form>  
+</div>
+    </body>  
+    </html>
+
